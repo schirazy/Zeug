@@ -1,16 +1,22 @@
 <?php
 
-$jahr = ($_POST['Jahr']);
+$message = '';
 
-if (empty($jahr)){
-    $message = '';
-}
-  elseif ($jahr % 4 == 0 || $jahr % 400 == 0) {
-    $message = "Das ist ein Schaltjahr";
-} elseif  (($jahr % 100) != 0) {
-    $message = "Das ist kein Schaltjahr";
-} else {
-    $message = '';
+if(isset($_POST['Jahr']) && !empty($_POST["Jahr"])) {
+    $jahr = ($_POST['Jahr']);
+
+
+    if ($jahr % 4 == 0 && ($jahr % 100 != 0)) {
+        $message = "Es ist ein Schaltjahr";
+
+    } elseif ($jahr % 400 == 0) {
+        $message = "Es ist ein Schaltjahr";
+    } else {
+        $message = "Es ist kein Schaltjahr";
+    }
+
+
+
 }
 
 ?>
@@ -34,9 +40,6 @@ if (empty($jahr)){
 
         </form>
 
-
-
-
-
     </body>
 </html>
+
