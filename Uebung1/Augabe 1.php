@@ -6,10 +6,10 @@ if(isset($_POST['Jahr']) && !empty($_POST["Jahr"])) {
     $jahr = ($_POST['Jahr']);
 
 
-    if ($jahr % 4 == 0 && ($jahr % 100 != 0)) {
+    if ($jahr % 4 === 0 && ($jahr % 100 !== 0)) {
         $message = "Es ist ein Schaltjahr";
 
-    } elseif ($jahr % 400 == 0) {
+    } elseif ($jahr % 400 === 0) {
         $message = "Es ist ein Schaltjahr";
     } else {
         $message = "Es ist kein Schaltjahr";
